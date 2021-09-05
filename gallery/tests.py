@@ -63,3 +63,8 @@ class ImageTestClass(TestCase):
                 self.image.delete_image()
                 images = Image.objects.all()
                 self.assertTrue(len(images) == 0)
+
+    def test_search_by_category(self):
+        self.image.search_by_category(self.test_category)
+        image= Image.objects.filter(self.test_category)
+        self.assertTrue(len(image)>0)
