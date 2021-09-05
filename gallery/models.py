@@ -14,6 +14,9 @@ class Categories(models.Model):
     def __str__(self):
         return self.category
 
+    def save_category(self):
+        self.save()
+
 
 
 class Image(models.Model):
