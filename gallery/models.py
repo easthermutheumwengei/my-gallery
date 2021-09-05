@@ -17,6 +17,11 @@ class Image(models.Model):
     def delete_image(self):
             self.delete()
 
+ @classmethod
+    def get_image_by_id(cls, id):
+        image = cls.objects.filter(id=id)
+        return image
+
 
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
