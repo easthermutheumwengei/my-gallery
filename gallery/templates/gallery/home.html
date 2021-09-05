@@ -1,0 +1,30 @@
+{%extends 'gallery/base.html'%}
+
+{% block content %}
+{{block.super}}
+<div class="container-fluid  home">
+
+    <div class="col-md-2 arrow">
+    </div>
+
+</div>
+
+<div class="container  gallery" id="gallery">
+    <div class="card text-center bg-transparent mt-4 " >
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item m-2">
+              <a class="nav-link btn-success active" id="home" aria-current="true" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link active" id="locationBtn" aria-current="true" href="#gallery" onClick="return showLocations();" >Filter by Location <i class="fas fa-map-marker-alt"></i></a>
+            </li>
+            <li class="nav-item m-2">
+              <a class="nav-link active" id="categoryBtn" aria-current="true" href="#gallery" onClick="return showCategories();"  >Filter by Category <i class="fab fa-phabricator"></i></a>
+            </li>
+
+
+
+          </ul>
+        </div>
+{% endblock %}
