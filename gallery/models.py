@@ -6,3 +6,6 @@ class Location(models.Model):
 
     def __str__(self):
         return self.location_name
+
+    class Meta:
+        ordering = ['post_date']
