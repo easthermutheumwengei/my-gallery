@@ -22,3 +22,22 @@ class LocationTestClass(TestCase):
     #     locations = Location.objects.all()
     #     self.assertTrue(len(locations)==0)
 
+class categoriesTestClass(TestCase):
+    def setUp(self):
+        self.Nature = Categories(category='Nature')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.Nature,Categories))
+
+    def tearDown(self):
+        Categories.objects.all().delete()
+
+    def test_save_method(self):
+        self.Nature.save_category()
+        category = Categories.objects.all()
+        self.assertTrue(len(category)>0)
+
+    # def test_delete_method(self):
+    #     self.Nature.delete_category()
+    #     category = Categories.objects.all()
+    #     self.assertTrue(len(category)==0)
