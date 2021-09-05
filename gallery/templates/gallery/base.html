@@ -1,4 +1,4 @@
-{% load bootstrap3 %}
+{% load bootstrap5%}
 {% load static%}
 <!DOCTYPE html>
 <html>
@@ -40,7 +40,8 @@
   </head>
   <body>
 {% include "gallery/navbar.html" %}
-
+{%block content%}
+{%endblock content%}
 
     {% block scripts %}
        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.js" integrity="sha512-DtTYd1g6TRpxfYHg+o7hVopdDBafEPnLs81XFiu5rVLr3eamPxvnuJUhwF5w4Z2GJbA/vpE7emalj7pKjnMphQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

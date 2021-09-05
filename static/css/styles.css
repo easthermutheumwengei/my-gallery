@@ -6,7 +6,7 @@
   text-decoration: none;
 }
 body {
-   background: url(https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+   background: url(https://images.pexels.com/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
    background-size: cover;
    transition: all .5s;
    scroll-behavior: smooth;
@@ -19,9 +19,9 @@ body {
   font-size: 2rem !important;
   font-weight: 600;
   /* font-family: 'Berkshire Swash', cursive; */
-  font-family: 'Style Script', cursive;
-  color: rgb(10, 177, 10) !important;
-  margin-left: 3%;
+  font-family: 'Style Script',
+  color: rgb(52, 131, 235);
+  margin-left: 2%;
 }
 
 
@@ -140,7 +140,6 @@ section{
 
 .gallery{
     margin-top:3%;
-    background-color: rgb(15, 15, 15, 0.9);
     height: auto ;
     transition: all .5s;
     display: flex;

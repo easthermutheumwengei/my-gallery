@@ -19,10 +19,10 @@
                   <h6>{{image_item.image_location}}</h6>
               </div>
               <div class="modal-footer">
-                  <input class="form-control input-lg" type="text" value="{{image_item.image.url}}"
+                  <input class="form-control input-lg" type="text" value="http://127.0.0.1:8000{{image_item.image.url}}"
                       id="url">
                   <button class="btn btn-success btn-sm"
-                      onclick="copyToClipboard('{{image_item.id}}.url')">Copy</button>
+                      onclick="copyToClipboard('http://127.0.0.1:8000{{image_item.id}}.url')">Copy</button>
                   <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close
               </div>
           </div>

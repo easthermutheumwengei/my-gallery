@@ -1,5 +1,6 @@
+from gallery.models import Categories, Image, Location
 from django.shortcuts import render
-from django.http  import HttpResponse
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 def home(request):
@@ -68,10 +69,10 @@ def search_results(request):
         search_category = request.GET.get("category")
 
         searched_category_images = Image.search_by_category(search_category)
-
+        print(searched_category_images)
         message = f"{search_category}"
 
-        return render(request, 'gallery/search.html',{"message":message,"category_images": searched_category_images})
+        return render(request, 'gallery/search.html',locals())
 
     else:
         message = "No such word"
