@@ -13,7 +13,7 @@ def home(request):
         "locations":locations,
         "categories": categories
     }
-    return render(request, 'gallery/index.html',context)
+    return render(request, 'gallery/home.html',context)
 
 def gallery(request):
     title= 'Gallery'
