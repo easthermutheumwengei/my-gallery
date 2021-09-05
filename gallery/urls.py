@@ -1,2 +1,7 @@
-from django.urls import re_path, path
+from django.conf.urls import url
 from . import views
+
+urlpatterns=[
+    url('^$',views.home,name = 'home'),
+]
+
