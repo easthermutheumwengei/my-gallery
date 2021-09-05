@@ -11,8 +11,13 @@ class Image(models.Model):
     post_date = models.DateField(auto_now_add=True)
 
 
- def save_image(self):
+    def save_image(self):
         self.save()
+
+    def delete_image(self):
+            self.delete()
+
+
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
 
