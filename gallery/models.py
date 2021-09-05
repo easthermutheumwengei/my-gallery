@@ -20,6 +20,13 @@ class Categories(models.Model):
     def delete_category(self):
         self.delete()
 
+    @classmethod
+    def display_all_image_Categories(cls):
+        return cls.objects.all()
+
+    @classmethod
+    def update_category(cls,id,category):
+        cls.objects.filter(id = id).update(category = category)
 
 class Image(models.Model):
     image= models.ImageField(upload_to ='gallery')
