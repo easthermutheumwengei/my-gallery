@@ -53,3 +53,8 @@ class ImageTestClass(TestCase):
         def test_save_method(self):
             images = Image.objects.all()
             self.assertTrue(len(images) > 0)
+
+    def test_display_all_image_items(self):
+            self.image.display_all_image_items()
+            images = Image.objects.all()
+            self.assertTrue(len(images)>0)
