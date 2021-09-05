@@ -1,30 +1,34 @@
-  <!-- Modal -->
-  <div class="modal fade" id="imageEnlarge{{image_item.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h3 class="modal-title" id="exampleModalLongTitle">{{image_item.image_name}}</h3>
-                  <h4 class="modal-title">{{image_item.location}}</h4>
-                  <h7 class="modal-title small">Date posted: {{image_item.post_date}}</h7>
+<!-- Modal -->
+<div class="modal fade" id="imageEnlarge{{image_item.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle">{{image_item.image_name|title}}</h3>
+                <h4 class="modal-title">{{image_item.location|title}}</h4>
 
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                  <img src="{{image_item.image.url}}" class="card-img-top" alt="..."
-                      style="height: 24rem; width: 29rem;">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="{{image_item.image.url}}" class="card-img-top" alt="..."
+                     style="height: 24rem; width: 29rem;">
+                <h6 class=" small text-muted float-right"><i class="fas fa-clock"></i> {{image_item.post_date}}</h6>
 
-                  <h6>{{image_item.image_description}}</h6>
-                  <h6><i class="fas fa-map-marked-alt"></i></h6>
-                  <h6>{{image_item.image_location}}</h6>
-              </div>
-              <div class="modal-footer">
-                  <input class="form-control input-lg" type="text" value="http://127.0.0.1:8000{{image_item.image.url}}"
-                      id="url">
-                  <button class="btn btn-success btn-sm"
-                      onclick="copyToClipboard('http://127.0.0.1:8000{{image_item.id}}.url')">Copy</button>
-                  <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close
-              </div>
-          </div>
-      </div>
-  </div>
+                <h6><i class="fas fa-info-circle"></i> {{image_item.image_description}}</h6>
+                <h6><i class="fas fa-map-marker"></i> {{image_item.image_location}}</h6>
+            </div>
+            <div class="modal-footer">
+                <input class="form-control input-lg" type="text" value="http://127.0.0.1:8000{{image_item.image.url}}"
+                       id="url">
+                <div class="d-flex ">
+                    <button class="btn btn-success btn-sm mr-auto"
+                            onclick="copyToClipboard('http://127.0.0.1:8000{{image_item.id}}.url')">Copy
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm ml-auto" data-bs-dismiss="modal">Close
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

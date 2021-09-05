@@ -5,16 +5,9 @@ from django.views.generic import ListView, DetailView
 # Create your views here.
 def home(request):
     title ='Home'
-    images = Image.display_all_image_items()
-    locations= Location.display_all_image_locations()
-    categories = Categories.display_all_image_Categories()
-    context = {
-        "title": title,
-        "images":images,
-        "locations":locations,
-        "categories": categories
-    }
-    return render(request, 'gallery/home.html',context)
+    images = Image.objects.all()
+
+    return render(request, 'gallery/home.html',locals())
 
 def gallery(request):
     title= 'Gallery'
@@ -24,7 +17,7 @@ def gallery(request):
     context = {
         "title": title,
         "images":images,
-        "locations":locations
+        "locations.py":locations
     }
 
     return render(request, 'gallery/gallery.html',context)
