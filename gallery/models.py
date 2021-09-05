@@ -31,6 +31,11 @@ def update_image(cls, id, image):
     def display_all_image_items(cls):
         return cls.objects.all()
 
+    @classmethod
+    def search_by_category(cls, search_category):
+        image= cls.objects.filter(image_category__category__icontains=search_category)
+        return image
+
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
 
