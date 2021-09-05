@@ -14,3 +14,16 @@ def home(request):
         "categories": categories
     }
     return render(request, 'gallery/index.html',context)
+
+def gallery(request):
+    title= 'Gallery'
+    images = Image.display_all_image_items()
+    locations= Location.display_all_image_locations()
+
+    context = {
+        "title": title,
+        "images":images,
+        "locations":locations
+    }
+
+    return render(request, 'gallery/gallery.html',context)
