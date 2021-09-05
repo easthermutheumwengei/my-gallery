@@ -36,6 +36,14 @@ def update_image(cls, id, image):
         image= cls.objects.filter(image_category__category__icontains=search_category)
         return image
 
+    @classmethod
+    def filter_by_location(cls, filter_location):
+        try:
+            image= cls.objects.filter(image_location__location_name__icontains=filter_location)
+            return image
+        except Exception:
+            return  "No images found in your filter location"
+
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
 
