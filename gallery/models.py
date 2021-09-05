@@ -17,15 +17,19 @@ class Image(models.Model):
     def delete_image(self):
             self.delete()
 
- @classmethod
+    @classmethod
     def get_image_by_id(cls, id):
         image = cls.objects.filter(id=id)
         return image
 
-@classmethod
+    @classmethod
 def update_image(cls, id, image):
     return cls.objects.filter(id=id).update(photo=image)
 
+
+    @classmethod
+    def display_all_image_items(cls):
+        return cls.objects.all()
 
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
