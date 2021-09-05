@@ -10,6 +10,9 @@ class Image(models.Model):
     image_category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     post_date = models.DateField(auto_now_add=True)
 
+
+ def save_image(self):
+        self.save()
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
 
