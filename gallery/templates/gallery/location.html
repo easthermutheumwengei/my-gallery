@@ -6,18 +6,16 @@
     <div class="container">
         <a class="" href="/#gallery" ><i class="fas fa-backspace fa-2x m-3" style="color: rgb(10, 177, 10);"></i></a>
         <h3>Gallery</h3>
-
-
+        
         <div class="row mt-3">
-            <div class="row header">
+            <div class="row">
                 {% if header %}
                 <p>{{header}} images</p>
                 {% else %}
                 <p>Category Images</p>
-                {% endif %}
-                <!-- <h6 class="text-center">{{location.location_name}} Images</h6> -->
+                {% endif %} 
             </div>
-            {%for image_item in category_images %}
+            {%for image_item in location_images %}
             <img src="{{image_item.image.url}}" class="card-img-top m-2" alt="..." style="height: 20rem; width: 25rem; border-radius: 6px;"
                 data-bs-toggle="modal" data-bs-target="#imageEnlarge{{image_item.id}}">
 
@@ -30,7 +28,7 @@
             </div>
 
             {%endfor%}
-
+            
         </div>
     </div>
 
@@ -40,4 +38,3 @@
 
 {% endblock %}
 
-<!-- <button><a href="{% url 'details' image.pk%}"></a></button> -->

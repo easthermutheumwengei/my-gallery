@@ -1,5 +1,17 @@
 {%extends 'gallery/base.html'%}
-
 {% block content %}
-{{block.super}}
+<div class="container-fluid  gallery">
+
+    <div class="col-md-5" style="background-color: black; color: white; height: 100px;">
+        <p>{{object.image_description}}</p>
+        <p>{{object.image_location}}</p>
+    </div>
+
+</div>
+
+
+
 {% endblock %}
+
+
+
