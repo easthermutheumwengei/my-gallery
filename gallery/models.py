@@ -22,6 +22,10 @@ class Image(models.Model):
         image = cls.objects.filter(id=id)
         return image
 
+@classmethod
+def update_image(cls, id, image):
+    return cls.objects.filter(id=id).update(photo=image)
+
 
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
