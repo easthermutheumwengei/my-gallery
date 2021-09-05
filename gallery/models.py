@@ -44,6 +44,14 @@ def update_image(cls, id, image):
         except Exception:
             return  "No images found in your filter location"
 
+    @classmethod
+    def filter_by_category(cls, filter_category):
+        try:
+            image= cls.objects.filter(image_category__category__icontains=filter_category)
+            return image
+        except Exception:
+            return  "No images found in your filter category"
+
 class Location(models.Model):
     location_name = models.CharField(max_length=30)
 
